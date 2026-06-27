@@ -5,222 +5,103 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NEVADA ENTERPRISE BUSINESS CENTER™ — Powered by AG ENGINEERING OS™</title>
 <meta name="description" content="Nevada Enterprise Business Center™ is an online full-service business center for entrepreneurs and small businesses. Business formation, planning, funding discovery, websites, government contract intelligence, and business advisory support — powered by AG ENGINEERING OS™.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,500&family=Jost:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --navy:#06142d;
-  --navy2:#0F2A6A;
-  --navy3:#163472;
-  --gold:#C9A84C;
-  --gold2:#e7c56c;
-  --cream:#f8f4e8;
-  --white:#fff;
-  --muted:rgba(255,255,255,.72);
-  --line:rgba(255,255,255,.18);
-  --shadow:0 34px 90px rgba(0,0,0,.42);
-  --display:'Cormorant Garamond',Georgia,serif;
-  --brand:'Cinzel',Georgia,serif;
-  --body:'Jost',system-ui,sans-serif;
-}
+:root{--navy:#06142d;--navy2:#0F2A6A;--gold:#C9A84C;--white:#fff;--ink:#13233d;font-family:Arial,Helvetica,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--body);background:var(--navy);color:var(--white);line-height:1.65;overflow-x:hidden}
-a{color:inherit}
-.topbar{position:sticky;top:0;z-index:80;background:rgba(5,17,42,.94);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.12)}
-.nav{max-width:1320px;margin:0 auto;padding:16px clamp(18px,4vw,48px);display:flex;align-items:center;justify-content:space-between;gap:22px}
-.brand{display:flex;align-items:center;gap:14px;text-decoration:none;min-width:280px}
-.mark{width:54px;height:54px;border:2px solid var(--gold);border-radius:12px;display:grid;place-items:center;background:linear-gradient(145deg,rgba(201,168,76,.12),rgba(255,255,255,.03));box-shadow:0 0 22px rgba(201,168,76,.14)}
-.mark span{font-family:var(--brand);font-size:1.45rem;font-weight:700;color:var(--gold)}
-.brand-name{font-family:var(--brand);font-size:1.02rem;letter-spacing:.08em;line-height:1.12;text-transform:uppercase;color:#fff}
-.brand-tag{font-size:.55rem;letter-spacing:.34em;text-transform:uppercase;color:rgba(255,255,255,.48);margin-top:4px}
-.links{display:flex;align-items:center;gap:22px;flex-wrap:wrap;justify-content:flex-end}
-.links a,.drop-toggle{font-size:.72rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;text-decoration:none;color:rgba(255,255,255,.78);background:none;border:0;font-family:var(--body);cursor:pointer}
-.links a:hover,.drop-toggle:hover{color:#fff}
-.drop{position:relative}
-.drop-menu{position:absolute;top:calc(100% + 16px);right:0;min-width:310px;background:#fff;color:var(--navy2);border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.32);padding:10px;display:none;border:1px solid rgba(201,168,76,.28)}
-.drop:hover .drop-menu,.drop.open .drop-menu{display:block}
-.drop-menu a{display:block;color:var(--navy2);padding:10px 12px;border-radius:10px;text-decoration:none;font-size:.82rem;letter-spacing:0;text-transform:none;font-weight:800}
-.drop-menu a:hover{background:#f2f5fc;color:var(--navy)}
-.nav-ctas{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:9px;text-decoration:none;font-weight:900;letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;padding:13px 22px;transition:.18s;border:1px solid transparent;white-space:nowrap}
-.btn:hover{transform:translateY(-2px)}
-.btn-gold{background:linear-gradient(135deg,#fff3c5,var(--gold),#d89b20);color:#06142d;box-shadow:0 14px 38px rgba(201,168,76,.22)}
-.btn-outline{border-color:rgba(255,255,255,.35);color:#fff;background:rgba(255,255,255,.05)}
-.btn-outline:hover{background:rgba(255,255,255,.12);border-color:#fff}
-.hero{position:relative;min-height:calc(100vh - 84px);display:flex;align-items:center;overflow:hidden;background-image:linear-gradient(100deg,rgba(3,10,24,.88) 0%,rgba(8,24,58,.76) 36%,rgba(15,42,106,.35) 60%,rgba(15,42,106,.05) 100%),linear-gradient(to bottom,rgba(3,10,24,.06) 0%,rgba(3,10,24,.78) 100%),url('https://capgen.aproposgroupllc.com/headquarters.webp');background-size:cover;background-position:center bottom;background-repeat:no-repeat}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 82% 12%,rgba(255,255,255,.13),transparent 28%),radial-gradient(circle at 16% 72%,rgba(201,168,76,.16),transparent 32%);pointer-events:none}
-.hero::after{content:'';position:absolute;inset:auto 0 0 0;height:34%;background:linear-gradient(to top,rgba(4,12,29,.92),transparent);pointer-events:none}
-.hero-wrap{width:100%;max-width:1420px;margin:0 auto;padding:clamp(46px,7vw,110px) clamp(22px,5vw,76px);position:relative;z-index:2}
-.hero-copy{max-width:690px;text-shadow:0 2px 30px rgba(0,0,0,.38)}
-.pill{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:8px 16px;margin-bottom:24px;color:rgba(255,255,255,.78);font-size:.68rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;background:rgba(255,255,255,.06);backdrop-filter:blur(12px)}
-.pill::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--gold)}
-h1{font-family:var(--display);font-weight:600;letter-spacing:-.045em;line-height:.94;font-size:clamp(3.2rem,7.2vw,7.35rem);color:#fff;margin-bottom:16px}
-.hero-sub{font-family:var(--display);font-style:italic;font-weight:400;color:var(--gold2);font-size:clamp(1.55rem,3vw,2.7rem);line-height:1.05;margin-bottom:26px}
-.gold-rule{width:72px;height:3px;background:linear-gradient(90deg,var(--gold),transparent);margin-bottom:24px}
-.hero-text{font-size:clamp(1rem,1.35vw,1.24rem);line-height:1.72;color:rgba(255,255,255,.84);max-width:650px;margin-bottom:28px}
-.hero-text strong{color:#fff;font-weight:700}
-.service-icons{display:grid;grid-template-columns:repeat(6,minmax(70px,1fr));gap:16px;max-width:700px;margin:26px 0 26px}
-.sicon{text-align:center;color:rgba(255,255,255,.86)}
-.sicon .ico{font-size:1.55rem;color:var(--gold);line-height:1;margin-bottom:6px}
-.sicon span{display:block;font-size:.78rem;line-height:1.25;font-weight:500}
-.trust-row{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 34px}
-.trust{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:7px 12px;font-size:.64rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:rgba(255,255,255,.72);background:rgba(255,255,255,.055)}
-.trust::before{content:'✓';display:grid;place-items:center;width:17px;height:17px;border-radius:50%;background:rgba(201,168,76,.24);color:var(--gold)}
-.hero-actions{display:flex;gap:18px;align-items:center;flex-wrap:wrap}.hero-actions .btn{min-width:210px;padding:16px 26px}.micro{font-size:.78rem;color:rgba(255,255,255,.56);margin-top:8px}
-.monument{position:absolute;right:clamp(18px,5vw,72px);bottom:clamp(34px,7vw,86px);z-index:3;width:min(520px,42vw);min-height:155px;background:linear-gradient(145deg,rgba(8,11,18,.86),rgba(31,33,39,.68));border:1px solid rgba(255,255,255,.16);box-shadow:0 22px 70px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.1);border-radius:2px;padding:30px 34px 24px;display:flex;align-items:center;gap:22px;backdrop-filter:blur(2px)}
-.monument::before{content:'';position:absolute;left:28px;right:28px;top:18px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.8}.mon-mark{width:68px;height:68px;border:2px solid var(--gold);border-radius:10px;display:grid;place-items:center;flex:0 0 68px;color:var(--gold);font-family:var(--brand);font-size:2rem;font-weight:700;background:rgba(201,168,76,.08)}
-.mon-text{font-family:var(--brand);font-size:clamp(1.18rem,2.3vw,2.05rem);line-height:1.08;letter-spacing:.08em;text-transform:uppercase;color:var(--gold2);text-shadow:0 0 18px rgba(201,168,76,.28)}
-.section{background:#fff;color:#13233d;padding:clamp(58px,8vw,96px) clamp(22px,5vw,76px)}
-.section.dark{background:linear-gradient(180deg,#06142d,#0F2A6A);color:#fff;border-top:1px solid rgba(255,255,255,.14)}
-.inner{max-width:1180px;margin:0 auto}.section-head{text-align:center;max-width:790px;margin:0 auto 44px}.eyebrow{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:900;color:var(--gold);margin-bottom:10px}.section h2{font-family:var(--display);font-size:clamp(2.2rem,4.2vw,4rem);line-height:1.02;font-weight:600;letter-spacing:-.035em;margin-bottom:12px}.section p.lede{font-size:1.08rem;color:#50617a;line-height:1.75}.dark p.lede{color:rgba(255,255,255,.68)}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid #e3e8f3;border-radius:18px;padding:28px;box-shadow:0 18px 42px rgba(15,42,106,.08)}.dark .card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);box-shadow:none;color:#fff}.card .num{font-family:var(--display);font-style:italic;font-size:3rem;color:rgba(15,42,106,.13);line-height:1}.dark .card .num{color:rgba(255,255,255,.14)}.card h3{font-family:var(--display);font-size:1.48rem;line-height:1.1;margin:10px 0 10px;color:var(--navy2)}.dark .card h3{color:#fff}.card p{color:#596981;font-size:.98rem}.dark .card p{color:rgba(255,255,255,.66)}
-.dept-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.dept{background:#0F2A6A;color:#fff;border-radius:18px;padding:26px;border:1px solid rgba(201,168,76,.28);min-height:208px;display:flex;flex-direction:column}.dept h3{font-family:var(--display);font-size:1.35rem;color:var(--gold2);margin-bottom:8px}.dept p{color:rgba(255,255,255,.76);font-size:.95rem;flex:1}.dept a{align-self:flex-start;margin-top:18px;color:#06142d;background:var(--gold);padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:900;font-size:.82rem}
-.cta{background:linear-gradient(135deg,#06142d,#0F2A6A 62%,#193b87);color:#fff;text-align:center;padding:86px 22px;border-top:1px solid rgba(255,255,255,.12)}.cta h2{font-family:var(--display);font-size:clamp(2.4rem,5vw,4.5rem);line-height:1;font-weight:600;margin-bottom:14px}.cta p{max-width:680px;margin:0 auto 28px;color:rgba(255,255,255,.68);font-size:1.08rem}.cta-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
-footer{background:#040b19;color:rgba(255,255,255,.55);padding:34px 22px;text-align:center;border-top:1px solid rgba(255,255,255,.1)}footer strong{color:#fff}.footer-tag{font-family:var(--display);font-size:1.1rem;color:var(--gold2);margin-bottom:8px}.legal{max-width:860px;margin:12px auto 0;font-size:.82rem;line-height:1.6}
-@media(max-width:1120px){.monument{position:relative;right:auto;bottom:auto;margin:28px 0 0;width:min(640px,100%)}.hero-wrap{padding-bottom:54px}.service-icons{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:900px){.nav{align-items:flex-start;flex-direction:column}.links,.nav-ctas{width:100%;justify-content:flex-start}.cards,.dept-grid{grid-template-columns:1fr}.hero{min-height:auto}.service-icons{grid-template-columns:repeat(2,1fr)}h1{font-size:clamp(2.7rem,13vw,4rem)}}
-@media(max-width:520px){.brand{min-width:0}.brand-name{font-size:.86rem}.mark{width:44px;height:44px}.links{gap:12px}.monument{padding:26px 22px;gap:14px}.mon-mark{width:54px;height:54px;flex-basis:54px;font-size:1.5rem}.hero-actions .btn{width:100%}.service-icons{grid-template-columns:1fr 1fr}}
+html{scroll-behavior:smooth;background:var(--navy)}
+body{background:var(--navy);color:var(--ink);line-height:1.6;overflow-x:hidden}
+.hero-image-stage{position:relative;width:100%;min-height:100vh;background:#06142d;overflow:hidden}
+.hero-image-stage img{display:block;width:100%;height:auto;min-height:100vh;object-fit:cover;object-position:center top}
+.hotspot{position:absolute;z-index:5;display:block;text-indent:-9999px;overflow:hidden;background:transparent;border:0}
+.hotspot:focus{outline:2px solid rgba(201,168,76,.75);outline-offset:3px;border-radius:8px}
+.hotspot.start-top{right:3.6%;top:4.2%;width:10.8%;height:5.6%}
+.hotspot.login-top{right:15.6%;top:4.2%;width:9.6%;height:5.6%}
+.hotspot.start-hero{left:4.0%;top:85.2%;width:15.0%;height:6.1%}
+.hotspot.login-hero{left:20.4%;top:85.2%;width:13.1%;height:6.1%}
+.hotspot.services{left:27.2%;top:4.9%;width:6.4%;height:4.0%}
+.hotspot.solutions{left:35.0%;top:4.9%;width:6.9%;height:4.0%}
+.hotspot.resources{left:43.3%;top:4.9%;width:7.5%;height:4.0%}
+.hotspot.pricing{left:57.2%;top:4.9%;width:5.2%;height:4.0%}
+.section{background:#fff;color:var(--ink);padding:72px 24px}
+.inner{max-width:1180px;margin:0 auto}.section-head{text-align:center;max-width:800px;margin:0 auto 42px}.eyebrow{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:900;color:var(--gold);margin-bottom:10px}.section h2{font-family:Georgia,serif;font-size:clamp(2.1rem,4vw,3.8rem);line-height:1.05;font-weight:600;letter-spacing:-.035em;margin-bottom:12px;color:var(--navy2)}.section p.lede{font-size:1.05rem;color:#50617a;line-height:1.75}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid #e3e8f3;border-radius:18px;padding:28px;box-shadow:0 18px 42px rgba(15,42,106,.08)}.card h3{font-family:Georgia,serif;font-size:1.45rem;line-height:1.1;margin-bottom:10px;color:var(--navy2)}.card p{color:#596981;font-size:.98rem}.section.dark{background:linear-gradient(180deg,#06142d,#0F2A6A);color:#fff}.section.dark h2{color:#fff}.section.dark p.lede,.section.dark .card p{color:rgba(255,255,255,.72)}.section.dark .card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);box-shadow:none}.section.dark .card h3{color:#fff}.dept-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.dept{background:#0F2A6A;color:#fff;border-radius:18px;padding:26px;border:1px solid rgba(201,168,76,.28);min-height:208px;display:flex;flex-direction:column}.dept h3{font-family:Georgia,serif;font-size:1.35rem;color:#e7c56c;margin-bottom:8px}.dept p{color:rgba(255,255,255,.76);font-size:.95rem;flex:1}.dept a{align-self:flex-start;margin-top:18px;color:#06142d;background:var(--gold);padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:900;font-size:.82rem}.cta{background:linear-gradient(135deg,#06142d,#0F2A6A 62%,#193b87);color:#fff;text-align:center;padding:86px 22px;border-top:1px solid rgba(255,255,255,.12)}.cta h2{font-family:Georgia,serif;font-size:clamp(2.3rem,5vw,4.3rem);line-height:1;font-weight:600;margin-bottom:14px}.cta p{max-width:680px;margin:0 auto 28px;color:rgba(255,255,255,.72);font-size:1.08rem}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:9px;text-decoration:none;font-weight:900;letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;padding:15px 26px;transition:.18s;border:1px solid transparent}.btn:hover{transform:translateY(-2px)}.btn-gold{background:linear-gradient(135deg,#fff3c5,var(--gold),#d89b20);color:#06142d}.btn-outline{border-color:rgba(255,255,255,.35);color:#fff;background:rgba(255,255,255,.05)}.cta-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}footer{background:#040b19;color:rgba(255,255,255,.55);padding:34px 22px;text-align:center;border-top:1px solid rgba(255,255,255,.1)}footer strong{color:#fff}.footer-tag{font-family:Georgia,serif;font-size:1.1rem;color:#e7c56c;margin-bottom:8px}.legal{max-width:860px;margin:12px auto 0;font-size:.82rem;line-height:1.6}
+@media(max-width:900px){.hero-image-stage{min-height:auto}.hero-image-stage img{min-height:0;height:auto}.hotspot{display:none}.cards,.dept-grid{grid-template-columns:1fr}.section{padding:56px 20px}}
 </style>
 </head>
 <body>
-<header class="topbar">
-  <nav class="nav">
-    <a class="brand" href="/">
-      <span class="mark"><span>N</span></span>
-      <span>
-        <span class="brand-name">Nevada Enterprise<br>Business Center</span>
-        <span class="brand-tag">Launch · Grow · Succeed</span>
-      </span>
-    </a>
-    <div class="links">
-      <a href="#services">Services</a>
-      <a href="#departments">Departments</a>
-      <div class="drop">
-        <button class="drop-toggle" type="button">Contract Opportunities ▾</button>
-        <div class="drop-menu">
-          <a href="https://capgen.aproposgroupllc.com">Federal Contract Opportunities</a>
-          <a href="https://nevadastategen.aproposgroupllc.com">Nevada State Contract Opportunities</a>
-          <a href="https://calstategen.aproposgroupllc.com">California State Contract Opportunities</a>
-        </div>
+<main>
+  <section class="hero-image-stage" id="home" aria-label="Nevada Enterprise Business Center homepage hero">
+    <img src="/APROPOS-BIZPLAN-main/assets/nevada-enterprise-hero.webp" alt="Nevada Enterprise Business Center homepage hero with corporate building and monument sign">
+    <a class="hotspot services" href="#services">Services</a>
+    <a class="hotspot solutions" href="#departments">Solutions</a>
+    <a class="hotspot resources" href="#mission">Resources</a>
+    <a class="hotspot pricing" href="#pricing">Pricing</a>
+    <a class="hotspot login-top" href="/login">Member Login</a>
+    <a class="hotspot start-top" href="/login">Start Free Trial</a>
+    <a class="hotspot start-hero" href="/login">Start Free Trial</a>
+    <a class="hotspot login-hero" href="/login">Member Login</a>
+  </section>
+
+  <section class="section" id="services">
+    <div class="inner">
+      <div class="section-head">
+        <div class="eyebrow">Full-Service Business Support</div>
+        <h2>Everything a business owner needs, organized in one place.</h2>
+        <p class="lede">Whether you're starting your first business, growing an established company, or expanding into government contracting, every journey begins with understanding where your business stands today and what steps should come next.</p>
       </div>
-      <a href="#pricing">Pricing</a>
-    </div>
-    <div class="nav-ctas">
-      <a class="btn btn-outline" href="/login">Member Login</a>
-      <a class="btn btn-gold" href="#start">Start Free Trial</a>
-    </div>
-  </nav>
-</header>
-
-<section class="hero" id="home">
-  <div class="hero-wrap">
-    <div class="hero-copy">
-      <div class="pill">Your partner in business success</div>
-      <h1>Nevada Enterprise<br>Business Center</h1>
-      <div class="hero-sub">An Online Full-Service Business Center</div>
-      <div class="gold-rule"></div>
-      <p class="hero-text">
-        We are redefining how entrepreneurial support is delivered in the AI era by combining intelligent technology with practical business services. Whether you're launching your first business, growing an existing company, or pursuing government contracts, <strong>Nevada Enterprise Business Center</strong> provides one destination for the tools, guidance, and services entrepreneurs need to succeed.
-      </p>
-      <div class="service-icons">
-        <div class="sicon"><div class="ico">▦</div><span>Business<br>Formation</span></div>
-        <div class="sicon"><div class="ico">◎</div><span>Business<br>Support</span></div>
-        <div class="sicon"><div class="ico">↗</div><span>Planning &<br>Strategy</span></div>
-        <div class="sicon"><div class="ico">$</div><span>Funding<br>Resources</span></div>
-        <div class="sicon"><div class="ico">□</div><span>Contract<br>Opportunities</span></div>
-        <div class="sicon"><div class="ico">◌</div><span>Websites &<br>Branding</span></div>
+      <div class="cards">
+        <div class="card"><h3>Assess</h3><p>Start with an AI-guided business assessment that identifies your current stage, gaps, priorities, and next best actions.</p></div>
+        <div class="card"><h3>Plan</h3><p>Receive a structured business action plan with practical steps across formation, digital presence, funding, customers, and contracts.</p></div>
+        <div class="card"><h3>Execute</h3><p>Move directly into departments designed to help you build websites, pursue contracts, create documents, and grow your business.</p></div>
       </div>
-      <div class="trust-row">
-        <span class="trust">Expert Guidance</span>
-        <span class="trust">Fast & Secure</span>
-        <span class="trust">All-In-One Platform</span>
-        <span class="trust">Powered by Intelligence</span>
+    </div>
+  </section>
+
+  <section class="section dark" id="mission">
+    <div class="inner">
+      <div class="section-head">
+        <div class="eyebrow">Vision & Mission</div>
+        <h2>Continuous access to business guidance, tools, and technology.</h2>
+        <p class="lede">Our vision is to ensure that every entrepreneur — regardless of location, schedule, or stage of business — has continuous access to the tools, guidance, and technology needed to build a successful enterprise.</p>
       </div>
-      <div class="hero-actions" id="start">
-        <a class="btn btn-gold" href="/login">Start Free Trial →</a>
-        <a class="btn btn-outline" href="/login">Member Login →</a>
+      <div class="cards">
+        <div class="card"><h3>Formation</h3><p>Support for business registration, structure, licensing, and the foundation needed to operate properly.</p></div>
+        <div class="card"><h3>Digital Transformation</h3><p>Websites, branding, automation, marketing systems, and customer-facing digital tools for modern businesses.</p></div>
+        <div class="card"><h3>Contract Readiness</h3><p>Government contracting support, opportunity intelligence, capability positioning, and proposal readiness.</p></div>
       </div>
-      <div class="micro">Built with Technology. Driven by Advanced Business Intelligence.</div>
     </div>
-    <div class="monument" aria-label="Nevada Enterprise Business Center monument sign">
-      <div class="mon-mark">N</div>
-      <div class="mon-text">Nevada Enterprise<br>Business Center</div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="section" id="services">
-  <div class="inner">
-    <div class="section-head">
-      <div class="eyebrow">Full-Service Business Support</div>
-      <h2>Everything a business owner needs, organized in one place.</h2>
-      <p class="lede">Whether you're starting your first business, growing an established company, or expanding into government contracting, every journey begins with understanding where your business stands today and what steps should come next.</p>
+  <section class="section" id="departments">
+    <div class="inner">
+      <div class="section-head">
+        <div class="eyebrow">Our Departments</div>
+        <h2>Six departments. One business center.</h2>
+        <p class="lede">Step into the department that matches the work you need done — not just advice, but practical business services connected to a single platform.</p>
+      </div>
+      <div class="dept-grid">
+        <div class="dept"><h3>Business Assessment & Planning</h3><p>Generate your AI-powered business plan from your assessment results.</p><a href="/login">Enter Department →</a></div>
+        <div class="dept"><h3>Website Design Advisory</h3><p>Build your business website with an AI-powered design studio and digital strategy support.</p><a href="https://ai4websitedesign.com">Enter Department →</a></div>
+        <div class="dept"><h3>Contract Proposal Writing</h3><p>Generate professional government contract proposal support with AI assistance.</p><a href="https://capgen.aproposgroupllc.com">Enter Department →</a></div>
+        <div class="dept"><h3>Marketing & Promotions Advisory</h3><p>Automate promotional content, campaign planning, and business visibility workflows.</p><a href="/login">Enter Department →</a></div>
+        <div class="dept"><h3>Capital & Funding Advisory</h3><p>Identify funding sources, grants, and lenders matched to your business stage.</p><a href="/login">Enter Department →</a></div>
+        <div class="dept"><h3>Business Registration Advisory</h3><p>Get step-by-step guidance on EIN, LLC formation, licensing, and state registration.</p><a href="/login">Enter Department →</a></div>
+      </div>
     </div>
-    <div class="cards">
-      <div class="card"><div class="num">I</div><h3>Assess</h3><p>Start with an AI-guided business assessment that identifies your current stage, gaps, priorities, and next best actions.</p></div>
-      <div class="card"><div class="num">II</div><h3>Plan</h3><p>Receive a structured business action plan with practical steps across formation, digital presence, funding, customers, and contracts.</p></div>
-      <div class="card"><div class="num">III</div><h3>Execute</h3><p>Move directly into departments designed to help you build websites, pursue contracts, create documents, and grow your business.</p></div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="section dark" id="mission">
-  <div class="inner">
-    <div class="section-head">
-      <div class="eyebrow">Vision & Mission</div>
-      <h2>Continuous access to business guidance, tools, and technology.</h2>
-      <p class="lede">Our vision is to ensure that every entrepreneur — regardless of location, schedule, or stage of business — has continuous access to the tools, guidance, and technology needed to build a successful enterprise.</p>
+  <section class="cta" id="pricing">
+    <h2>Ready to build your enterprise?</h2>
+    <p>Start with the Nevada Enterprise Business Center assessment and receive your readiness score, action plan, and guided next steps.</p>
+    <div class="cta-actions">
+      <a class="btn btn-gold" href="/login">Start Free Trial →</a>
+      <a class="btn btn-outline" href="/login">Returning Member →</a>
     </div>
-    <div class="cards">
-      <div class="card"><div class="num">01</div><h3>Formation</h3><p>Support for business registration, structure, licensing, and the foundation needed to operate properly.</p></div>
-      <div class="card"><div class="num">02</div><h3>Digital Transformation</h3><p>Websites, branding, automation, marketing systems, and customer-facing digital tools for modern businesses.</p></div>
-      <div class="card"><div class="num">03</div><h3>Contract Readiness</h3><p>Government contracting support, opportunity intelligence, capability positioning, and proposal readiness.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="departments">
-  <div class="inner">
-    <div class="section-head">
-      <div class="eyebrow">Our Departments</div>
-      <h2>Six departments. One business center.</h2>
-      <p class="lede">Step into the department that matches the work you need done — not just advice, but practical business services connected to a single platform.</p>
-    </div>
-    <div class="dept-grid">
-      <div class="dept"><h3>Business Assessment & Planning</h3><p>Generate your AI-powered business plan from your assessment results.</p><a href="/login">Enter Department →</a></div>
-      <div class="dept"><h3>Website Design Advisory</h3><p>Build your business website with an AI-powered design studio and digital strategy support.</p><a href="https://ai4websitedesign.com">Enter Department →</a></div>
-      <div class="dept"><h3>Contract Proposal Writing</h3><p>Generate professional government contract proposal support with AI assistance.</p><a href="https://capgen.aproposgroupllc.com">Enter Department →</a></div>
-      <div class="dept"><h3>Marketing & Promotions Advisory</h3><p>Automate promotional content, campaign planning, and business visibility workflows.</p><a href="/login">Enter Department →</a></div>
-      <div class="dept"><h3>Capital & Funding Advisory</h3><p>Identify funding sources, grants, and lenders matched to your business stage.</p><a href="/login">Enter Department →</a></div>
-      <div class="dept"><h3>Business Registration Advisory</h3><p>Get step-by-step guidance on EIN, LLC formation, licensing, and state registration.</p><a href="/login">Enter Department →</a></div>
-    </div>
-  </div>
-</section>
-
-<section class="cta" id="pricing">
-  <h2>Ready to build your enterprise?</h2>
-  <p>Start with the Nevada Enterprise Business Center assessment and receive your readiness score, action plan, and guided next steps.</p>
-  <div class="cta-actions">
-    <a class="btn btn-gold" href="/login">Start Free Trial →</a>
-    <a class="btn btn-outline" href="/login">Returning Member →</a>
-  </div>
-</section>
-
+  </section>
+</main>
 <footer>
   <div class="footer-tag">Built for Business. Powered by Technology. Guided by Intelligence.</div>
   <div><strong>NEVADA ENTERPRISE BUSINESS CENTER™</strong> by Apropos Group LLC</div>
   <div class="legal">NEVADA ENTERPRISE BUSINESS CENTER™ and AG ENGINEERING OS™ are proprietary platforms developed and owned by Apropos Group LLC. Unauthorized reproduction, distribution, or imitation is strictly prohibited.</div>
 </footer>
-
-<script>
-document.querySelectorAll('.drop-toggle').forEach(btn=>{
-  btn.addEventListener('click',()=>btn.closest('.drop').classList.toggle('open'));
-});
-document.addEventListener('click',e=>{
-  document.querySelectorAll('.drop.open').forEach(d=>{ if(!d.contains(e.target)) d.classList.remove('open'); });
-});
-</script>
 </body>
 </html>
