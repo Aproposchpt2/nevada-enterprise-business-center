@@ -15,6 +15,21 @@ const Store = {
   del(k){try{sessionStorage.removeItem(k);}catch(_){}}
 };
 
+// Correct public-menu contract links after the page loads.
+(function correctGovernmentContractLinks(){
+  function apply(){
+    document.querySelectorAll('a').forEach(a => {
+      if ((a.textContent || '').trim() === 'Federal Contract Opportunities') {
+        a.href = 'https://capgen.aproposgroupllc.com';
+        a.target = '_blank';
+        a.rel = 'noopener';
+      }
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', apply);
+  else apply();
+})();
+
 // Map a recommended-service href onto the multi-page routes.
 // Internal section anchors from the recommendation engine → real pages.
 function resolveHref(href){
