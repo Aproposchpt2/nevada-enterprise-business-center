@@ -181,5 +181,42 @@ body{background:var(--navy);color:var(--ink);line-height:1.6;overflow-x:hidden}
   });
 })();
 </script>
+
+<script>
+(function(){
+  var spots=[
+    {cls:'start-top',  l:85.6,t:4.2, w:10.8,h:5.6},
+    {cls:'login-top',  l:74.8,t:4.2, w:9.6, h:5.6},
+    {cls:'start-hero', l:4.0, t:85.2,w:15.0,h:6.1},
+    {cls:'login-hero', l:20.4,t:85.2,w:13.1,h:6.1},
+    {cls:'services',   l:27.2,t:4.9, w:6.4, h:4.0},
+    {cls:'solutions',  l:35.0,t:4.9, w:6.9, h:4.0},
+    {cls:'resources',  l:43.3,t:4.9, w:7.5, h:4.0},
+    {cls:'pricing',    l:57.2,t:4.9, w:5.2, h:4.0}
+  ];
+  function reflow(){
+    var img=document.querySelector('.hero-image-stage img');
+    if(!img||!img.naturalWidth)return;
+    var stage=img.parentElement;
+    var sw=stage.offsetWidth,sh=stage.offsetHeight;
+    var nat=img.naturalWidth/img.naturalHeight;
+    var iw,ih,ix,iy;
+    if(sw/sh>nat){ih=sh;iw=sh*nat;ix=(sw-iw)/2;iy=0;}
+    else{iw=sw;ih=sw/nat;ix=0;iy=0;}
+    spots.forEach(function(d){
+      var el=document.querySelector('.hotspot.'+d.cls);
+      if(!el)return;
+      el.style.left=(ix+iw*d.l/100)+'px';
+      el.style.top=(iy+ih*d.t/100)+'px';
+      el.style.width=(iw*d.w/100)+'px';
+      el.style.height=(ih*d.h/100)+'px';
+      el.style.right='auto';
+    });
+  }
+  var img=document.querySelector('.hero-image-stage img');
+  if(img){img.complete&&img.naturalWidth?reflow():img.addEventListener('load',reflow);}
+  window.addEventListener('resize',reflow);
+})();
+</script>
 </body>
 </html>
