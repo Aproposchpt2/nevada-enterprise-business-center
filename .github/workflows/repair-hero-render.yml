@@ -1,0 +1,49 @@
+name: Repair hero render
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  repair-hero-render:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Restore valid hero asset and cache-bust homepage src
+        run: |
+          set -euo pipefail
+          mkdir -p assets
+          curl -L --fail "https://raw.githubusercontent.com/Aproposchpt2/CapGen-Govt-Search--Engine/main/headquarters.webp" -o assets/nevada-enterprise-hero.webp
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          path = Path('index.html')
+          text = path.read_text()
+          fallback = "https://raw.githubusercontent.com/Aproposchpt2/CapGen-Govt-Search--Engine/main/headquarters.webp"
+          new_img = f'<img src="/assets/nevada-enterprise-hero.webp?v=20260628-2" onerror="this.onerror=null;this.src=\'{fallback}\';" alt="Nevada Enterprise Business Center homepage hero with corporate building and monument sign">'
+          text = re.sub(r'<img\s+src="(?:/APROPOS-BIZPLAN-main)?/assets/nevada-enterprise-hero\.webp(?:\?[^\"]*)?"(?:\s+onerror="[^"]*")?\s+alt="Nevada Enterprise Business Center homepage hero with corporate building and monument sign">', new_img, text, count=1)
+          path.write_text(text)
+          PY
+
+      - name: Commit repair
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html assets/nevada-enterprise-hero.webp
+          git rm --ignore-unmatch .github/workflows/repair-hero-render.yml
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Fix: restore homepage hero rendering"
+            git push
+          fi
